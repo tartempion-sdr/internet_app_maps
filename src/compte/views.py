@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from .forms import CreerUtilisateur
 
@@ -9,6 +9,7 @@ def inscriptionPage(request):
         form=CreerUtilisateur(request.POST)
         if form.is_valid():
             form.save()
+            return redirect('acces')
     context={'form':form}
     return render(request,'compte/inscription.html',context)
 
