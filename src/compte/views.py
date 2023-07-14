@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate,login,logout
 from .forms import CreerUtilisateur
 from django.contrib import messages
 
@@ -25,10 +25,12 @@ def accesPage(request):
         user=authenticate(request,username=username,password=password)
         if user is not None:
             login(request,user)
-            return redirect('maps')
+            return redirect('/internet_app/')
         else:
             messages.info(request,"erreur nom d'utilisateur")
     return render(request,'compte/acces.html',context)
 
-
+def logoutUser(request):
+    logout(request)
+    return redirect('acces')
 
