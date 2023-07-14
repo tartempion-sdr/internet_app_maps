@@ -4,7 +4,11 @@ from .forms import CreerUtilisateur
 
 # Create your views here.
 def inscriptionPage(request):
-    form=CreerUtilisateur(request.POST)
+    form=CreerUtilisateur()
+    if request.method=='POST':
+        form=CreerUtilisateur(request.POST)
+        if form.is_valid():
+            form.save()
     context={'form':form}
     return render(request,'compte/inscription.html',context)
 
