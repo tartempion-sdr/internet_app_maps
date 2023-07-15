@@ -1,7 +1,80 @@
 <head>
     <title>Exemple de carte uMap intégrée à une page Web</title>
     <meta charset="UTF-8">
+
+<link rel="stylesheet" href="/static/admin/css/base.css">
+
+  <link rel="stylesheet" href="/static/admin/css/dark_mode.css">
+  <script src="/static/admin/js/theme.js" defer></script>
+
+
+  <link rel="stylesheet" href="/static/admin/css/nav_sidebar.css">
+  <script src="/static/admin/js/nav_sidebar.js" defer></script>
+
+<link rel="stylesheet" href="/static/admin/css/dashboard.css">
+
+
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="/static/admin/css/responsive.css">
+    
+
 </head>
+
+<div id="header">
+        <div id="branding">
+        
+<h1 id="site-name"><a href="/internet_app/compte/acces">acces</a></h1>
+
+
+        </div>
+        
+        
+        <div id="user-tools">
+            
+                Bienvenue,
+                <strong>admin</strong>.
+            
+            
+                
+                    <a href=/internet_app>Voir le site</a> /
+      
+                
+                
+                    
+                    
+                
+                
+                <a href="/admin/password_change/">Modifier le mot de passe</a> /
+                
+                <form id="logout-form" method="post" action="/admin/logout/">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="GSAbKHr1ANMZ1DtaE2Vhh1NMI522RtDWCgQ6XkCQyJo9wGLxC5sTuUFHQ3Hb41Io">
+                    <button type="submit">Déconnexion</button>
+                </form>
+                
+<button class="theme-toggle">
+  <div class="visually-hidden theme-label-when-auto">Changer de thème (actuellement : automatique)</div>
+  <div class="visually-hidden theme-label-when-light">Changer de thème (actuellement : clair)</div>
+  <div class="visually-hidden theme-label-when-dark">Changer de thème (actuellement : sombre)</div>
+  <svg aria-hidden="true" class="theme-icon-when-auto">
+    <use xlink:href="#icon-auto" />
+  </svg>
+  <svg aria-hidden="true" class="theme-icon-when-dark">
+    <use xlink:href="#icon-moon" />
+  </svg>
+  <svg aria-hidden="true" class="theme-icon-when-light">
+    <use xlink:href="#icon-sun" />
+  </svg>
+</button>
+
+            
+        </div>
+        
+        
+        
+    </div>
+    
+ 
 <body>
 
  <form>
