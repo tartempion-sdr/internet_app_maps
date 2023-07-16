@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate,login,logout
 from .forms import CreerUtilisateur
-from django.contrib import messages
+from django.contrib import messages,auth
 
 # Create your views here.
 def inscriptionPage(request):
@@ -31,6 +31,6 @@ def accesPage(request):
     return render(request,'compte/acces.html',context)
 
 def logoutUser(request):
-    logout(request)
+    auth.logout(request)
     return redirect('acces')
 
