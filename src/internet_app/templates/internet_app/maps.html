@@ -1,14 +1,99 @@
 <head>
-    <title>Exemple de carte uMap intégrée à une page Web</title>
+    <title>maps</title>
     <meta charset="UTF-8">
+
+<link rel="stylesheet" href="/static/admin/css/base.css">
+
+  <link rel="stylesheet" href="/static/admin/css/dark_mode.css">
+  <script src="/static/admin/js/theme.js" defer></script>
+
+
+  <link rel="stylesheet" href="/static/admin/css/nav_sidebar.css">
+  <script src="/static/admin/js/nav_sidebar.js" defer></script>
+
+<link rel="stylesheet" href="/static/admin/css/dashboard.css">
+
+
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="/static/admin/css/responsive.css">
+    
+
 </head>
+
+<div id="header">
+        <div id="branding">
+        
+<h1 id="acces"><a href="/internet_app/compte/acces">acces</a></h1>
+<h1 id="acces"><a href="/internet_app/compte/inscription">inscription</a></h1>
+<h1 id="acces"><a href="/internet_app/modification">modification</a></h1>
+<h1 id="acces"><a href="/internet_app/maps/">maps</a></h1>
+        </div>
+       
+        
+        <div id="user-tools">
+            
+                Bienvenue,
+                <strong>{{request.user.username}}</strong>.
+            
+            
+                
+                    <a href=/internet_app>Voir le site</a> /
+      
+                
+                
+                    
+                    
+                
+                
+                <a href="/admin/password_change/">Modifier le mot de passe</a> /
+                
+                <form id="logout-form" method="post" action="/compte/quitter">
+                
+                    {% csrf_token %} 
+                    <button type="submit">Déconnexion</button>
+                </form>
+                
+<button class="theme-toggle">
+  <div class="visually-hidden theme-label-when-auto">Changer de thème (actuellement : automatique)</div>
+  <div class="visually-hidden theme-label-when-light">Changer de thème (actuellement : clair)</div>
+  <div class="visually-hidden theme-label-when-dark">Changer de thème (actuellement : sombre)</div>
+  <svg aria-hidden="true" class="theme-icon-when-auto">
+    <use xlink:href="#icon-auto" />
+  </svg>
+  <svg aria-hidden="true" class="theme-icon-when-dark">
+    <use xlink:href="#icon-moon" />
+  </svg>
+  <svg aria-hidden="true" class="theme-icon-when-light">
+    <use xlink:href="#icon-sun" />
+  </svg>
+</button>
+
+            
+        </div>
+        
+        
+        
+    </div>
+    
+ 
 <body>
+
+
+
     <div>
-        <h1>Projet django</h1>
-        <iframe width="100%" height="400px" frameBorder="0" src="https://umap.openstreetmap.fr/fr/map/parc-et-jardins-a-nantes-44-france_932285"></iframe>
-        <p><a href="https://umap.openstreetmap.fr/fr/map/parc-et-jardins-a-nantes-44-france_932285">Voir en plein écran</a></p>
-        <p>Cette carte vous est proposée par tartempion :-)</p>
+        <h1>maps</h1>
+        <iframe width="100%" height="500px" frameBorder="0" src="https://umap.openstreetmap.fr/fr/map/anonymous-edit/941789:B2kZY2PdoUwIqkgu6qQIeozRj4XnCI-nE6TYqvHQsdI"></iframe>
+       
     </div>
 </body>
 
-
+<!-- SVGs -->
+<svg xmlns="http://www.w3.org/2000/svg" class="base-svgs">
+  <symbol viewBox="0 0 24 24" width="1rem" height="1rem" id="icon-auto"><path d="M0 0h24v24H0z" fill="currentColor"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2V4a8 8 0 1 0 0 16z"/></symbol>
+  <symbol viewBox="0 0 24 24" width="1rem" height="1rem" id="icon-moon"><path d="M0 0h24v24H0z" fill="currentColor"/><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"/></symbol>
+  <symbol viewBox="0 0 24 24" width="1rem" height="1rem" id="icon-sun"><path d="M0 0h24v24H0z" fill="currentColor"/><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/></symbol>
+</svg>
+<!-- END SVGs -->
+</body>
+</html>

@@ -16,6 +16,7 @@ def inscription(request):
 @login_required(login_url="/compte/acces")
 
 def modification(request):
+
     return render(request, "internet_app/modification.html")
 
 @login_required(login_url="/compte/acces")
